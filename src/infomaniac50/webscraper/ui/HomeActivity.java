@@ -4,6 +4,7 @@ import java.lang.Thread.UncaughtExceptionHandler;
 
 import infomaniac50.webscraper.R;
 import infomaniac50.webscraper.service.ScraperService;
+import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
 import infomaniac50.webscraper.storage.DbAdapter;
 import android.app.Activity;
@@ -29,7 +30,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class HomeActivity extends Activity {
-	DbAdapter dbHelper;
+	DatabaseWrapper dbWrapper;
 	ListView lstScrapers;
 	private Cursor cursor;
 	private static final int ACTIVITY_CREATE = 0;
@@ -68,8 +69,8 @@ public class HomeActivity extends Activity {
 		
 		setContentView(R.layout.main);
 
-		dbHelper = new DbAdapter(getApplicationContext());
-		dbHelper.open();
+		dbWrapper = new DatabaseWrapper(this, true);
+		
 		lstScrapers = (ListView)findViewById(R.id.lstscrapers);
 		
 		lstScrapers.setOnItemClickListener(new OnItemClickListener(){
@@ -105,7 +106,7 @@ public class HomeActivity extends Activity {
 		super.onDestroy();
 		unbindService(scraper_service_conn);
 		cursor.close();
-		dbHelper.close();
+		dbWrapper.close();
 	}
 	
 	@Override 

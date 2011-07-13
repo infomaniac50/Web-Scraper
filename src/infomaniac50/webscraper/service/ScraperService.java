@@ -3,6 +3,7 @@ package infomaniac50.webscraper.service;
 import infomaniac50.webscraper.common.IStartable;
 import infomaniac50.webscraper.common.IUpdatable;
 import infomaniac50.webscraper.common.WebScraperUpdater;
+import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
 import infomaniac50.webscraper.storage.DbAdapter;
 
@@ -22,7 +23,7 @@ public class ScraperService extends Service implements IStartable, IUpdatable{
 	private Context context;
 	private IBinder scraper_binder = new ScraperBinder();
 	private Hashtable<Long, WebScraperUpdater> scrapers;
-	private DbAdapter dbHelper;
+	private DatabaseWrapper dbWrapper;
 	
 	public static void start(Context context)
 	{
@@ -47,11 +48,8 @@ public class ScraperService extends Service implements IStartable, IUpdatable{
 	{
 		WebScraperUpdater scraper;
 		
-		//open the database connection
-		dbHelper.open();
-		
 		//get all of the scrapers in the database
-		Cursor cursor = dbHelper.fetchAllScrapers();
+		Cursor cursor = dbWrapper.fetchAllScrapers();
 		
 		//for the current scrapers
 		for(long rowId : scrapers.keySet())
@@ -88,10 +86,7 @@ public class ScraperService extends Service implements IStartable, IUpdatable{
 		}
 		
 		//close the table reference
-		cursor.close();
-		
-		//close the database connection
-		dbHelper.close();
+		cursor.close();		
 	}
 	
 	public void start()
@@ -119,7 +114,7 @@ public class ScraperService extends Service implements IStartable, IUpdatable{
 	public void onCreate() {
 		super.onCreate();
 		context = this;
-		dbHelper = new DbAdapter(context);
+		dbWrapper = new DatabaseWrapper(context);
 		scrapers = new Hashtable<Long, WebScraperUpdater>();
 	}
 

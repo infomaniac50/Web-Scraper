@@ -1,6 +1,7 @@
 package infomaniac50.webscraper.common;
 
 import infomaniac50.webscraper.R;
+import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.DbAdapter;
 import infomaniac50.webscraper.storage.WebScraper;
 import infomaniac50.webscraper.util.NetworkUtil;
@@ -39,12 +40,14 @@ public class WebScraperUpdater implements IUpdatable,IStartable {
 	private boolean isDeleted = false;
 	private boolean isChanged = false;
 	private ScraperTask task;
+	private DatabaseWrapper dbWrapper;
 	
 	public WebScraperUpdater(Context context, long RowId)
 	{
 		this.notifier = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 		this.context = context;
 		this.rowId = RowId;
+		this.dbWrapper = new DatabaseWrapper(context);
 	}
 	
 	public void stop()
@@ -78,10 +81,7 @@ public class WebScraperUpdater implements IUpdatable,IStartable {
 	{
 		if (!isDeleted)
 		{
-			DbAdapter dbHelper = new DbAdapter(context);
-			dbHelper.open();
-
-			Cursor cursor = dbHelper.fetchScraper(rowId);
+			Cursor cursor = dbWrapper.fetchScraper(rowId);
 			if (cursor.moveToFirst())
 			{
 				String name = cursor.getString(cursor.getColumnIndexOrThrow(WebScraper.KEY_NAME));
@@ -95,7 +95,6 @@ public class WebScraperUpdater implements IUpdatable,IStartable {
 				setInterval(interval);
 
 				cursor.close();
-				dbHelper.close();
 				
 				if (isChanged)
 				{

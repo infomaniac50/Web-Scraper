@@ -1,6 +1,7 @@
 package infomaniac50.webscraper.ui;
 
 import infomaniac50.webscraper.R;
+import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
 import infomaniac50.webscraper.storage.DbAdapter;
 import android.app.Activity;
@@ -14,7 +15,7 @@ public class EditScraperActivity extends Activity {
 	protected final int SUCCESS_RETURN_CODE = 1;
 	int[] positionList; 
 	Long rowId;
-    DbAdapter dbHelper;
+    DatabaseWrapper dbWrapper;
     
     EditText txtName;
     EditText txtURL;
@@ -30,8 +31,7 @@ public class EditScraperActivity extends Activity {
         Bundle b = this.getIntent().getExtras();
         positionList = getResources().getIntArray(R.array.cmbInterval_values);
         
-        dbHelper = new DbAdapter(this);
-        dbHelper.open();       
+        dbWrapper = new DatabaseWrapper(this);
         txtName = (EditText)findViewById(R.id.txtName);
         txtURL = (EditText)findViewById(R.id.txtURL);
         txtExpression = (EditText)findViewById(R.id.txtExpression);
@@ -52,7 +52,7 @@ public class EditScraperActivity extends Activity {
     {
     	if (rowId != null)
     	{
-    		Cursor scraper = dbHelper.fetchScraper(rowId);
+    		Cursor scraper = dbWrapper.fetchScraper(rowId);
     		if (!scraper.moveToFirst()) return;
     		
     		//startManagingCursor(scraper);
@@ -107,12 +107,12 @@ public class EditScraperActivity extends Activity {
 		}
 		
 		if (isNew) {
-			long id = dbHelper.createScraper(Name, URL, Expression, Interval);
+			long id = dbWrapper.createScraper(Name, URL, Expression, Interval);
 			if (id > 0) {
 				rowId = id;
 			}
 		} else {
-			dbHelper.updateScraper(rowId, Name, URL, Expression, Interval);
+			dbWrapper.updateScraper(rowId, Name, URL, Expression, Interval);
 		}
 	}
     
