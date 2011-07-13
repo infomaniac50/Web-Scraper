@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Web Scraper</string>
+	<!-- Error String Resources -->
+	<string name="scraperFetchIOError">IO Exception occurred. Failed to fetch page.</string>
+	<!-- Home Activity Resources -->
+	<string name="txtURL_hint">Enter the URL</string>
+	<!-- Home Activity Menu Resources -->
+	<string name="mnuNewScraper_text">New Scraper</string>
+	<string name="mnuSettings_text">Settings</string>
+	<!-- Home Activity Context Menu Resources -->
+	<string name="mnuEditScraper_text">Edit</string>
+	<string name="mnuDeleteScraper_text">Delete</string>
+	
+	<!-- Edit Scraper Activity Resources -->
+	<string name="btnSaveScraper_text">Save Scraper</string>
+	<string name="txtName_text">Name</string>
+	<string name="txtURL_text">URL</string>
+	<string name="txtExpression_text">Expression</string>
+	<string name="lblInterval_text">Interval</string>
+	<integer-array name="cmbInterval_values">
+		<item>5</item>
+		<item>10</item>
+		<item>15</item>
+		<item>20</item>
+		<item>30</item>
+		<item>45</item>
+		<item>60</item>
+		<item>120</item>
+	</integer-array>
+	<string-array name="cmbInterval_display">
+		<item>5 minutes</item>
+		<item>10 minutes</item>
+		<item>15 minutes</item>
+		<item>20 minutes</item>
+		<item>30 minutes</item>
+		<item>45 minutes</item>
+		<item>1 hour</item>
+		<item>2 hours</item>
+	</string-array>
+	<!-- App Preferences Resources -->
+	<string name="expressionSettings_title">Regular Expression Settings</string>
+	<string name="expressionCaseInsensitive_title">Case Sensitive</string>
+	<string name="expressionCaseInsensitive_summary_on">Case sensitive expressions enabled</string>
+	<string name="expressionCaseInsensitive_summary_off">Case sensitive expressions disabled</string>
+	<string name="expressionEasy_title">Easy Expressions</string>
+	<string name="serviceControl_title">Service Control</string>
+	<string name="serviceControl_summary_on">Service is started.</string>
+	<string name="serviceControl_summary_off">Service is stopped. No new updates will be available.</string>
+	<string name="vibrateOnUpdate_title">Vibrate</string>
+	<string name="vibrateOnUpdate_summary_on">The phone will vibrate on updates.</string>
+	<string name="vibrateOnUpdate_summary_off">The phone will not vibrate on updates.</string>
+	<string name="soundOnUpdate_title">Alert Tone</string>
+	<string name="soundOnUpdate_summary_on">The phone will use an alert tone on updates.</string>
+	<string name="soundOnUpdate_summary_off">The phone will not use an alert tone on updates.</string>
+	<!-- Scraper Service Resources -->
+	<string name="scraperUpdateTicker_text">Content Updated</string>
+	<string name="scraperUpdateDescription_text" formatted="false">The scraper %s has changed. The new value is %s.</string>
+</resources>

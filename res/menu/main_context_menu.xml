@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item 
+    	android:id="@+id/mnuEditScraper"
+    	android:title="@string/mnuEditScraper_text"/>
+    <item
+    	android:id="@+id/mnuDeleteScraper"
+    	android:title="@string/mnuDeleteScraper_text"/>
+</menu>

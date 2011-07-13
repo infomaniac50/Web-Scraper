@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:key="serviceControl" android:summaryOn="@string/serviceControl_summary_on" android:title="@string/serviceControl_title" android:summaryOff="@string/serviceControl_summary_off"></CheckBoxPreference>
+    <CheckBoxPreference android:key="vibrateOnUpdate" android:summaryOn="@string/vibrateOnUpdate_summary_on" android:title="@string/vibrateOnUpdate_title" android:summaryOff="@string/vibrateOnUpdate_summary_off"></CheckBoxPreference>
+    <CheckBoxPreference android:key="soundOnUpdate" android:title="@string/soundOnUpdate_title" android:summaryOn="@string/soundOnUpdate_summary_on" android:summaryOff="@string/soundOnUpdate_summary_off"></CheckBoxPreference>
+    <PreferenceScreen android:title="@string/expressionSettings_title">
+        <CheckBoxPreference android:summaryOn="@string/expressionCaseInsensitive_summary_on" android:summaryOff="@string/expressionCaseInsensitive_summary_off" android:key="expressionCaseInsensitive" android:title="@string/expressionCaseInsensitive_title"></CheckBoxPreference>
+        <CheckBoxPreference android:key="expressionEasy" android:title="@string/expressionEasy_title"></CheckBoxPreference>
+    </PreferenceScreen>
+    
+</PreferenceScreen>

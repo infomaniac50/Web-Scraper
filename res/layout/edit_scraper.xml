@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout 
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent"
+    	android:orientation="vertical" 
+    	xmlns:android="http://schemas.android.com/apk/res/android">
+		<EditText
+			android:singleLine="true"
+			android:hint="@string/txtName_text"
+	    	android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content"
+			android:id="@+id/txtName" />
+		<EditText
+			android:singleLine="true"
+			android:hint="@string/txtURL_text"
+	    	android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content"
+			android:id="@+id/txtURL" />
+		<EditText
+			android:singleLine="true"
+			android:hint="@string/txtExpression_text"
+	    	android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content"
+			android:id="@+id/txtExpression" />
+		<TextView
+			android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content" 
+	    	android:text="@string/lblInterval_text" />
+		<Spinner
+	    	android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content"
+			android:id="@+id/cmbInterval" 
+			android:entries="@array/cmbInterval_display" />
+		<Button
+			android:id="@+id/btnSaveScraper"
+			android:layout_width="fill_parent" 
+	    	android:layout_height="wrap_content"
+			android:text="@string/btnSaveScraper_text"
+			android:onClick="btnSaveScraper_click" />
+    </LinearLayout>
