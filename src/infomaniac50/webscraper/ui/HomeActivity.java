@@ -181,7 +181,7 @@ public class HomeActivity extends Activity {
 			scraper_service.update();
 		}
 		
-		cursor = dbHelper.fetchAllScrapers();
+		cursor = dbWrapper.fetchAllScrapers();
 		startManagingCursor(cursor);
 		
 		String[] from = new String[] { WebScraper.KEY_NAME };
@@ -228,7 +228,7 @@ public class HomeActivity extends Activity {
 	
 	private void DeleteScraper(long id)
 	{
-		dbHelper.deleteScraper(id);
+		dbWrapper.deleteScraper(id);
 		loadScrapers();
 	}
 }
