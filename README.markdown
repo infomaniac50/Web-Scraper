@@ -5,7 +5,7 @@ Derek Chafin aka. infomaniac50
 
 ### Introduction
 The Web Scraper application for Android is designed to fetch content 
-from a web page and provide updates to when it changes.
+from a web page and notify you when it changes.
 
 ### Features
 
