@@ -2,7 +2,6 @@ package infomaniac50.webscraper.common;
 
 import infomaniac50.webscraper.R;
 import infomaniac50.webscraper.storage.DatabaseWrapper;
-import infomaniac50.webscraper.storage.DbAdapter;
 import infomaniac50.webscraper.storage.WebScraper;
 import infomaniac50.webscraper.util.NetworkUtil;
 

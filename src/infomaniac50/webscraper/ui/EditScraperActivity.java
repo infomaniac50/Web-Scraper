@@ -3,7 +3,6 @@ package infomaniac50.webscraper.ui;
 import infomaniac50.webscraper.R;
 import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
-import infomaniac50.webscraper.storage.DbAdapter;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;

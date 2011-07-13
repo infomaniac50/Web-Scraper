@@ -5,7 +5,6 @@ import infomaniac50.webscraper.common.IUpdatable;
 import infomaniac50.webscraper.common.WebScraperUpdater;
 import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
-import infomaniac50.webscraper.storage.DbAdapter;
 
 import java.util.Hashtable;
 

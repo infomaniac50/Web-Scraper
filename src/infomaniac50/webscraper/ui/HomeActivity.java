@@ -1,12 +1,12 @@
 package infomaniac50.webscraper.ui;
 
-import java.lang.Thread.UncaughtExceptionHandler;
-
 import infomaniac50.webscraper.R;
 import infomaniac50.webscraper.service.ScraperService;
 import infomaniac50.webscraper.storage.DatabaseWrapper;
 import infomaniac50.webscraper.storage.WebScraper;
-import infomaniac50.webscraper.storage.DbAdapter;
+
+import java.lang.Thread.UncaughtExceptionHandler;
+
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;

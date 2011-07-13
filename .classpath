@@ -3,6 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="lib" path="C:/Users/dchafin/workspace/jsoup/jsoup-1.5.2.jar" sourcepath="C:/Users/dchafin/workspace/jsoup/jsoup-1.5.2-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dchafin/workspace/WebScraper/jsoup/jsoup-1.5.2.jar" sourcepath="jsoup/jsoup-1.5.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/WebScraper/jsoup/jsoup-1.5.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
